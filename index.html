@@ -1109,6 +1109,72 @@ body{
   @media (prefers-reduced-motion: reduce){
     .theme-toggle .theme-icon.animate{animation:none;}
   }
+  
+  /* ===== Download Button Modern (Dark / Light / OLED Ready) ===== */
+
+.app-download-modern{
+  margin-top: 16px;
+}
+
+/* warna adaptif via CSS variable */
+:root{
+  --btn-grad-start:#4f7cff;
+  --btn-grad-end:#2563eb;
+  --btn-text:#ffffff;
+  --btn-shadow:0 14px 30px rgba(37,99,235,.35);
+}
+
+body.dark,
+body.oled{
+  --btn-grad-start:#3b82f6;
+  --btn-grad-end:#1e40af;
+  --btn-text:#ffffff;
+  --btn-shadow:0 16px 34px rgba(0,0,0,.55);
+}
+
+.download-pill{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--btn-text);
+  background: linear-gradient(135deg,var(--btn-grad-start),var(--btn-grad-end));
+  box-shadow: var(--btn-shadow);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.download-pill:active{
+  transform: scale(.98);
+}
+
+/* teks */
+.download-text{
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: .2px;
+}
+
+/* bulatan panah */
+.download-arrow{
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.95);
+  color:#1e3a8a;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  box-shadow: 0 6px 14px rgba(0,0,0,.25);
+}
+
+/* OLED lebih kontras */
+body.oled .download-arrow{
+  background:#ffffff;
+}
+
 </style>
 
 </head>
@@ -1329,6 +1395,12 @@ body{
   </div>
 </div>
     </div>
+    <div class="app-download-modern">
+  <a href="LINK_APK_KAMU" class="download-pill">
+    <span class="download-text">Download Aplikasi</span>
+    <span class="download-arrow">➜</span>
+  </a>
+</div>
 
     <button class="btn-ghost" id="btn-reset">RESET SEMUA DATA</button>
   </div>
